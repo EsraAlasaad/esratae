@@ -1,0 +1,11 @@
+window.PROGRAMMES=[
+{id:'family',name:'Family programme',tag:'Shared moments, an easy pace',desc:'A comfortable family route with flexible touring, time by the pool and gentle island discoveries.',days:['Explore Ubud and the rice terraces at a relaxed pace.','Choose family-friendly rooms or a larger private villa.','Add a Jakarta city day or a Maldives beach extension.'],art:'family'},
+{id:'honeymoon',name:'Honeymoon programme',tag:'Private moments, extraordinary places',desc:'A romantic journey with a private villa, memorable sunsets and time together in Bali or the Maldives.',days:['Begin with a peaceful Bali retreat and a private pool.','Choose sunset dining, coastal views and a flexible day together.','Extend to an overwater island stay in the Maldives.'],art:'honeymoon'},
+{id:'youth',name:'Friends & youth programme',tag:'More energy, more adventure',desc:'A lively trip for friends, combining island scenery with your choice of rafting, surf, sightseeing and evening experiences.',days:['Mix Ubud adventure with the beaches of southern Bali.','Choose a Nusa Penida day and your preferred water activities.','Add Jakarta city experiences or a Maldives island extension.'],art:'youth'}];
+window.ADVENTURES=[
+{id:'rice',region:'ubud',name:'Ubud rice terraces',art:0},{id:'rafting',region:'ubud',name:'Ayung River rafting',art:0},{id:'swing',region:'ubud',name:'Bali jungle swing',art:0},
+{id:'surf',region:'seminyak',name:'Seminyak surf lesson',art:1},{id:'sunset',region:'seminyak',name:'Seminyak beach sunset',art:1},
+{id:'kecak',region:'uluwatu',name:'Uluwatu temple & Kecak',art:2},{id:'cliffs',region:'uluwatu',name:'Uluwatu coastal viewpoints',art:2},
+{id:'penida',region:'nusa-penida',name:'Nusa Penida viewpoints',art:3},{id:'snorkel-penida',region:'nusa-penida',name:'Nusa Penida snorkelling',art:3},
+{id:'jakarta-city',region:'jakarta',name:'Jakarta landmarks & city tour',art:1},{id:'tmii',region:'jakarta',name:'Taman Mini cultural visit',art:1},
+{id:'maldives-snorkel',region:'maldives',name:'Maldives snorkelling',art:1},{id:'maldives-cruise',region:'maldives',name:'Maldives sunset cruise',art:1},{id:'conrad-lagoon',region:'conrad',name:'Conrad lagoon & island experiences',art:1}];

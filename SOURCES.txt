@@ -1,0 +1,71 @@
+TAER ALSHAREQ — destination experience
+
+360 video: AirPano, Natural Wonders in Bali (trailer), embedded from YouTube
+https://www.airpano.com/360video/vr-bali-relax/
+https://www.youtube.com/watch?v=6SbH51yN-q8
+
+Current modelled temperatures: Open-Meteo, fetched per destination on page load.
+https://open-meteo.com/en/docs
+
+Region photographs:
+Ubud: Intrepid Travel — ubud_rice-fields_shutterstock_390855292.jpg
+https://www.intrepidtravel.com/au/indonesia/beautiful-bali-166529
+Seminyak: Indonesia Travel — seminyak_banner.jpg
+https://www.indonesia.travel/id/en/destination/bali-nusa-tenggara/bali/seminyak
+Uluwatu: Tatinta — destination/file-1604654723704.jpg
+https://tatinta.com/en/diem-den/den-uluwatu/2413
+Nusa Penida: Routard — large_nusa-penida-kelingking.1521303_8171057879.jpg
+https://www.routard.com/fr/mag/reportage/a/nusa-penida-l-ile-mysterieuse-au-large-de-bali
+
+Hotels and restaurants are editorial examples with official links, not live availability.
+Hotel/restaurant pages show area photographs labelled with the area name.
+Original logo and original homepage media supplied by the user.
+The Bali map is a stylised geographic illustration, not a navigation chart.
+
+V3 collections — official property photographs and information:
+https://www.anantara.com/en/dhigu-maldives
+https://www.anantara.com/en/veli-maldives
+https://theozencollection.com/maadhoo/en
+https://www.comohotels.com/maldives/como-cocoa-island
+https://www.sunsiyam.com/sun-siyam-olhuveli/
+https://www.conradmaldives.com/villas/
+https://www.fourseasons.com/sayan/
+https://www.marriott.com/en-us/hotels/dpswh-w-bali-seminyak/overview/
+https://www.marriott.com/en-us/hotels/dpsuw-renaissance-bali-uluwatu-resort-and-spa/overview/
+https://adiwanahotels.com/adiwana-warnakali/
+
+Food: generated editorial dish illustrations (not photographs of restaurant plating).
+Rendang Sapi is listed on the official Ayung Terrace page. Other dishes are identified as local-flavour illustrations, not verified signature dishes on the current menus.
+The Events journal is an editorial selection of experience categories, not a live comprehensive availability calendar.
+The five Maldives resort entries are separate South Malé Atoll island resorts, not resorts situated on Maafushi.
+Animated transport connections are illustrative; road within Bali, boat via Sanur to the Nusa islands, flight connections on the world globe. No airline service or timetable is asserted.
+3D treatment: layered photographic and illustrated pop-ups in a CSS 3D book, not navigable architectural 3D models.
+The Instagram reference exposed its cover/metadata, but not playable video footage in this environment.
+
+V4 update (supersedes older presentation and page-count notes):
+- Generated transparent architectural and landscape dioramas replace framed photos in the book. They are artistic 3D illustrations, not exact reconstructions of named hotels.
+- Four accommodation pages per displayed geographic area. Several pages cover room or villa collections within the same property; this is not a claim of four different hotels in every area.
+- Family and friends/youth programme imagery generated for this site. Honeymoon mood image supplied by the user, not a claim that the depicted island is Bali or the Maldives.
+- English request builder, calendar fields, budget and adventure selection; local browser PDF export with jsPDF 2.5.2; WhatsApp prefilled request for +964 780 115 1950. The visitor sends the final message inside WhatsApp.
+- Couples-only planning option triggers a visual and browser speech warning for groups above two. It does not determine a property's complete occupancy policy.
+- Calm ocean and Bali music reuse user-supplied audio, looped and stopped after 50 seconds. Browsers may require a visitor gesture to start sound.
+
+Room and villa category sources checked from official sites:
+https://www.fourseasons.com/sayan/accommodations/
+https://theudayaresort.com/
+https://www.theseminyak.com/
+https://www.hyatt.com/alila-hotels-and-resorts/en-US/dpsas-alila-seminyak/rooms
+https://www.hyatt.com/alila-hotels-and-resorts/en-US/dpsav-alila-villas-uluwatu/rooms
+https://www.marriott.com/en-us/hotels/dpsuw-renaissance-bali-uluwatu-resort-and-spa/rooms/
+https://www.semabuhills.com/
+https://adiwanahotels.com/adiwana-warnakali-unveils-upgraded-rooms/
+https://www.fourseasons.com/jakarta/accommodations/
+https://www.mandarinoriental.com/en/jakarta/jalan-mh-thamrin/stay
+https://www.theacalabali.com/
+Ceningan's suggested stays are explicitly labelled as nearby properties on Nusa Lembongan.
+
+V5: new generated transparent escape sculpture and transport atlas; these are artistic 3D renders, not navigable meshes. Book imagery builds via three masked image bands, not separate architectural models. Nature ambience synthesized with Web Audio river noise and birds. PDF preview/download/print; sample PDF uses illustrative dates/budgets, not a quotation. All Overview buttons and book endings return to home overview without welcome replay. Music is only on home hero and hidden during intro.
+
+V7: contextual Back links; client request validation minimum date difference 5 days and USD1500/person, rechecked for PDF and WhatsApp. Scroll-triggered reveals and staggered Bali pins. Nature sound button removed, quiet 60-second Web Audio ambience with browser gesture unlock. Bali tour uses official Google Maps Street View launch URLs (external application, coverage-dependent); no API key or embedded Street View account configured.
+V8: original user-supplied BRI.png wedding photograph preserved, bride and groom revealed using complementary CSS masks; family scene uses non-overlapping semantic SVG masks (greenery, water, trees and family) over original generated source; subtle animated water displacement. Original existing destination photographs used for event journal rather than generic rendered landmarks. User-supplied Mixkit water-and-birds recording converted to MP3, 0.12 volume and 60-second play timer on Escape page, browser gesture fallback. Layered photographic depth, not true 3D geometry.
+V9: budget validation uses English speech warning, plate-first food reveal and animated illustrative steam. PDF includes uploaded original logo, chosen programme imagery, and locally generated QR linking to business WhatsApp. Branded sample uses illustrative dates and budget. Google map embeds in same page; selected areas update map. Actual Maps Embed Street View requires restricted API key in tour-config.js, currently unconfigured. Existing matching property photos prioritized for Maldives/Conrad and known hotel assets; these are photographic depth treatments, not exact 3D meshes. Nature recording volume increased to 0.21. Animated water glimmer is a visual overlay, not a video of the property.

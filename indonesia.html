@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Indonesia Globe | TAER ALSHAREQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="journey.css">
+<link rel="stylesheet" href="theme.css"><link rel="stylesheet" href="experience.css"><link rel="stylesheet" href="popup.css"><link rel="stylesheet" href="v4.css"><link rel="stylesheet" href="v5.css"><link rel="stylesheet" href="responsive.css"><link rel="stylesheet" href="motion.css"><link rel="stylesheet" href="v8.css"><link rel="stylesheet" href="v9.css"><link rel="stylesheet" href="all-motion.css"></head>
+<body class="jx">
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-mark"><img src="assets/original-logo.png" alt="طائر الشرق"></span><span>طائر الشرق | TAER ALSHAREQ</span></a><nav class="site-nav" aria-label="Main navigation"><a class="pill programmes-link" href="escape.html">Request your programme</a><a class="pill overview-link" href="index.html" data-en="Overview" data-ar="الرئيسية">Overview</a><button class="pill" id="language" aria-label="Change language">العربية</button><button class="pill" id="mode" data-en="☀ Day mode" data-ar="☀ الوضع النهاري">☀ Day mode</button><a class="pill tour-link" href="bali.html#tour" data-en="360° Tour" data-ar="جولة 360°">360° Tour</a><a class="pill" href="events.html" data-en="Events" data-ar="الحفلات">Events</a></nav></header>
+
+<div id="globe"></div>
+
+<div class="globe-hint">DRAG TO SPIN · CHOOSE A DESTINATION</div>
+
+
+
+
+<div class="warp" id="warp"></div>
+
+<script src="assets/vendor/globe.gl.min.js"></script>
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/globe/textures.js"></script><script src="globe-fallback.js"></script>
+<script>
+(() => {
+  const places = [
+    { id: 'jakarta', name: 'Jakarta', ar: 'جاكرتا', note: 'Landmarks & tours', lat: -6.1754, lng: 106.8272, href: 'jakarta.html' },
+    { id: 'maafushi', name: 'Maafushi', lat: 3.94038, lng: 73.48968, href: 'maafushi.html' },
+    { id: 'conrad', name: 'Conrad', lat: 3.615, lng: 72.7167, href: 'conrad.html' },
+    { id: 'bali', name: 'Bali', ar: 'بالي', note: 'Adventures & temples', lat: -8.4095, lng: 115.1889, href: 'bali.html' }
+  ];
+  const flights=[{flight:true,name:'Flight connection',lat:-6.1754,lng:106.8272},{flight:true,name:'Flight connection',lat:-6.1754,lng:106.8272}];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const mobile = () => innerWidth < 720;
+  const home = () => ({ lat: 0, lng: new URLSearchParams(location.search).has('region') ? 73 : 94, altitude: mobile() ? 2.4 : 1.8 });
+  let leaving = false;
+
+  const go = (id) => {
+    if (leaving) return;
+    leaving = true;
+    const p = places.find(x => x.id === id);
+    if (!globe) { location.href = p.href; return; }
+    globe.controls().autoRotate = false;
+    globe.pointOfView({ lat: p.lat, lng: p.lng, altitude: 0.28 }, reduce ? 300 : 1600);
+    gsap.to('#warp', { clipPath: 'circle(150% at 50% 50%)', duration: reduce ? .3 : 1, delay: reduce ? .2 : 1.1, ease: 'power2.in',
+      onComplete: () => { location.href = p.href; } });
+  };
+  document.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => go(b.dataset.go)));
+
+  let globe = null;
+  try {
+    globe = Globe({ animateIn: !reduce })(document.getElementById('globe'))
+      .width(innerWidth).height(innerHeight)
+      .globeImageUrl(window.GLOBE_TEX.earth)
+      .bumpImageUrl(window.GLOBE_TEX.bump)
+      .backgroundColor('#07152f')
+      .atmosphereColor('#ffffff').atmosphereAltitude(0.2)
+      .htmlElementsData([...places,...flights])
+      .htmlAltitude(0.01)
+      .htmlElement(d => {
+        if(d.flight){const el=document.createElement('span');el.className='globe-plane';el.innerHTML='<svg width="38" height="38" viewBox="0 0 683 683"><image href="assets/popups/transport.png" width="2048" height="683"/></svg>';el.setAttribute('aria-label','Animated journey connection');return el;}
+        // globe.gl positions this zero-size anchor; the button is offset inside it
+        const anchor = document.createElement('div');
+        anchor.className = 'pin-anchor';
+        const b = document.createElement('button');
+        b.className = 'pin pin-' + d.id + (['jakarta','conrad'].includes(d.id) ? ' left' : '');
+        b.setAttribute('aria-label', `Open ${d.name} journal`);
+        b.innerHTML = `<span class="pin-dot"></span><span class="pin-label"><b>${d.name}</b></span>`;
+        b.addEventListener('click', e => { e.stopPropagation(); go(d.id); });
+        anchor.appendChild(b);
+        return anchor;
+      })
+      .htmlElementVisibilityModifier((el, visible) => el.classList.toggle('hidden', !visible))
+      .ringsData(places)
+      .ringColor(() => t => `rgba(255,255,255,${1 - t})`)
+      .ringMaxRadius(3.2).ringPropagationSpeed(1.4).ringRepeatPeriod(1500)
+      .arcsData([{startLat:-6.1754,startLng:106.8272,endLat:-8.4095,endLng:115.1889},{startLat:-6.1754,startLng:106.8272,endLat:3.94038,endLng:73.48968}])
+      .arcColor(() => ['rgba(255,255,255,0.25)', '#ffffff'])
+      .arcAltitude(0.08).arcStroke(0.5)
+      .arcDashLength(0.45).arcDashGap(0.25).arcDashAnimateTime(2400);
+
+    if(!reduce)setInterval(()=>{const t=(performance.now()%18000)/18000;[[places[0],places[3]],[places[0],places[1]]].forEach(([a,b],i)=>{const u=(t+i*.35)%1;flights[i].lat=a.lat+(b.lat-a.lat)*u;flights[i].lng=a.lng+(b.lng-a.lng)*u});globe.htmlElementsData([...places,...flights]);},120);
+    const controls = globe.controls();
+    controls.autoRotate = !reduce;
+    controls.autoRotateSpeed = 0.35;
+    controls.minDistance = 130;
+    controls.maxDistance = 600;
+
+    globe.pointOfView({ lat: 12, lng: 40, altitude: 3.2 });
+    globe.onGlobeReady(() => {
+      setTimeout(() => {
+        globe.pointOfView(home(), reduce ? 0 : 2800);
+        setTimeout(() => { if (!leaving) controls.autoRotate = false; }, 2900);
+      }, reduce ? 0 : 500);
+    });
+
+    addEventListener('resize', () => globe.width(innerWidth).height(innerHeight));
+  } catch (err) {
+    console.warn('3D globe unavailable', err);
+    window.drawFallbackGlobe(places);
+    globe = null;
+  }
+})();
+</script>
+
+<script src="site-controls.js"></script><script src="effects-audio.js"></script><script src="build-scenes.js"></script><script src="motion.js"></script></body>
+</html>
